@@ -7,21 +7,28 @@
 # Пользователь ввел число 1. Результат: 7, 5, 3, 3, 2, 1.
 # Набор натуральных чисел можно задать непосредственно в коде, например, my_list = [7, 5, 3, 3, 2].
 
+# Объявление списка, ввод
 my_list = [8, 6, 4, 3, 2]
 num = int(input("Введите число: "))
 print(my_list)
+
+# Определние позоции в списке
 i = 0
-new_list = []
 while i < int(len(my_list)):
-    pos = i
+    if num > my_list[i]:
+        pos = i
     i += 1
-j = 0
-if my_list[j] < pos:
-    for j in range(0, (pos-1)):
-        new_list.insert(j, my_list[j])
-else:
-    new_list.insert(pos, num)
-    for j in range(pos, int(len(my_list))):
-        new_list.insert(j, my_list[j])
-print(my_list)
-print(new_list)
+
+# Разделение списка на две части
+first_list = []
+second_list = []
+third_list = []
+first_list.append(my_list[:pos])
+second_list.append(my_list[pos:])
+print("1: ", first_list)
+print("2: ", second_list)
+third_list.append(first_list)
+third_list.append(pos)
+third_list.append(second_list)
+print("3: ", third_list)
+
